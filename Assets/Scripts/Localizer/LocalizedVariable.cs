@@ -14,7 +14,7 @@ public class LocalizedVariable<T> : LocalizedVariable, ISerializationCallbackRec
 {
     [SerializeField] private T[] _localizations;
 
-    public T GetVariable { get => _localizations[PlayerPrefs.GetInt(locKey, 0)]; }
+    public T GetVariable  => _localizations[PlayerPrefs.GetInt(locKey, 0)];
 
     public LocalizedVariable()
     {
@@ -31,7 +31,7 @@ public class LocalizedVariable<T> : LocalizedVariable, ISerializationCallbackRec
 
             _localizations = new T[numberOfLanguages];
 
-            for (int i = 0; i < numberOfLanguages; i++)
+            for (int i = 0; i < oldArray.Length; i++)
             {           
                 _localizations[i] = oldArray[i];
             }
